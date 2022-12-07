@@ -71,7 +71,7 @@ class Upsample2(nn.Module):
 
 
 class Upsample(nn.Module):
-    def __init__(self, channels, pad_type='repl', filt_size=4, stride=2):
+    def __init__(self, channels, pad_type='repl', filt_size=4, filt_odd: float, pad_size: float, stride=2, off: float):
         super(Upsample, self).__init__()
         self.filt_size = filt_size
         self.filt_odd = np.mod(filt_size, 2) == 1
